@@ -14,6 +14,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AMoveActivity extends AppCompatActivity {
+
+    //Глупый вопрос! Почему AMoveActivity.java так странно отображается - как 3-и в одном?? а
+    //MainActivity - стандартно??
     private RecyclerView amove;
     private List<ActionMovie> amoveList;
     private AMoveAdapter aMoveAdapter;
@@ -51,8 +54,22 @@ class AMoveAdapter extends RecyclerView.Adapter<AMoveViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(AMoveViewHolder holder, int position) {
-
+    public void onBindViewHolder(final AMoveViewHolder holder, final int position) {
+        holder.nameView.setText(amoveList.get(position).getName());
+        holder.nameView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                amoveList.remove(holder.getAdapterPosition());
+                //Удаление не сработало :-(
+            }
+        });
+        holder.descView.setText(amoveList.get(position).getDescription());
+        holder.nameView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                amoveList.remove(holder.getAdapterPosition());
+            }
+        });
     }
 
     @Override

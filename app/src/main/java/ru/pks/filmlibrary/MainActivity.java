@@ -1,6 +1,7 @@
 package ru.pks.filmlibrary;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -43,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
     protected void startSelectActivity(int select) {
         if (select == 0) {
-            String n = String.valueOf(select);
-            Toast.makeText(MainActivity.this, n, Toast.LENGTH_SHORT).show();
+            Intent a_move = new Intent(MainActivity.this, AMoveActivity.class);
+            startActivity(a_move);
         } else {
-            Toast.makeText(MainActivity.this, "Времени нехватило ни на что...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Времени нехватило ни на что... Работает только \"Боевикик\"", Toast.LENGTH_SHORT).show();
         }
     }
 
