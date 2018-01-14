@@ -2,23 +2,23 @@ package ru.pks.filmlibrary;
 
 public class Genre {
 
-    static final Genre[] genres = {
-            new Genre("Боевик", ""),
-            new Genre("Вестерн", ""),
-            new Genre("Детектив", ""),
-            new Genre("Детское кино", ""),
-            new Genre("Документальное кино", ""),
-            new Genre("Драма", ""),
-            new Genre("Комедия",""),
-            new Genre("Приключение",""),
-            new Genre("Семейное кино",""),
-            new Genre("Триллер",""),
-            new Genre("Ужасы",""),
-            new Genre("Фантастика","")
-    };
-
     private String name;
     private String description;
+
+    static final Genre[] genres = {
+            new Genre("Боевик", "Боевик"),
+            new Genre("Вестерн", "Вестерн"),
+            new Genre("Детектив", "Детектив"),
+            new Genre("Детское кино", "Детское кино"),
+            new Genre("Документальное кино", "Документальное кино"),
+            new Genre("Драма", "Драма"),
+            new Genre("Комедия", "Комедия"),
+            new Genre("Приключение", "Приключение"),
+            new Genre("Семейное кино", "Семейное кино"),
+            new Genre("Триллер", "Триллер"),
+            new Genre("Ужасы", "Ужасы"),
+            new Genre("Фантастика", "Фантастика")
+    };
 
     private Genre(String name, String description) {
         this.name = name;
