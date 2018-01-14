@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -44,7 +45,9 @@ class AMoveAdapter extends RecyclerView.Adapter<AMoveViewHolder> {
 
     @Override
     public AMoveViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        View itemView = LayoutInflater.from(context).inflate(R.layout.amove_item,
+                parent, false);
+        return new AMoveViewHolder(itemView);
     }
 
     @Override
@@ -54,6 +57,9 @@ class AMoveAdapter extends RecyclerView.Adapter<AMoveViewHolder> {
 
     @Override
     public int getItemCount() {
+        if (amoveList != null) {
+            return amoveList.size();
+        }
         return 0;
     }
 }
