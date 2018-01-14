@@ -6,7 +6,7 @@ public class Genre {
     private String description;
 
     static final Genre[] genres = {
-            new Genre("Боевик", "Боевик"),
+            new Genre("Боевик", "Срелялки-пиналки"),
             new Genre("Вестерн", "Вестерн"),
             new Genre("Детектив", "Детектив"),
             new Genre("Детское кино", "Детское кино"),

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView list;
     private List<Genre> genres;
     private GenreAdapter genreAdapter;
+
+    protected int genreNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,19 @@ public class MainActivity extends AppCompatActivity {
         list.setLayoutManager(linearLayoutManager);
         list.setAdapter(genreAdapter);
 
+    }
+
+    protected void startSelectActivity(int select) {
+        if (select == 0) {
+            String n = String.valueOf(select);
+            Toast.makeText(MainActivity.this, n, Toast.LENGTH_SHORT).show();
+        }
+        if (select == 2) {
+
+        }
+        if (select == 3) {
+
+        }
     }
 
     private class GenreAdapter extends RecyclerView.Adapter<GenreViewHolder> {
@@ -52,9 +68,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(GenreViewHolder holder, int position) {
+        public void onBindViewHolder(final GenreViewHolder holder, int position) {
             holder.nameView.setText(genreList.get(position).getName());
             holder.descView.setText(genreList.get(position).getDescription());
+            holder.nameView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    genreNum = holder.getAdapterPosition();
+                    startSelectActivity(genreNum);
+                }
+            });
         }
 
         @Override
