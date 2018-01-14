@@ -59,8 +59,13 @@ class AMoveAdapter extends RecyclerView.Adapter<AMoveViewHolder> {
         holder.nameView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 //                amoveList.remove(holder.getAdapterPosition());
                 //Удаление не сработало :-(
+
+                //Пока курил осенило, нада было сразу делать ArrayList, и удаление не работает
+                //т.к. я все го лишь преобразовал amoveList = Arrays.asList(ActionMovie.amove);
+                //Прав ли я??
             }
         });
         holder.descView.setText(amoveList.get(position).getDescription());
