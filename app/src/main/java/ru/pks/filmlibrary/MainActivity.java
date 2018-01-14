@@ -14,6 +14,9 @@ import android.widget.Toast;
 import java.util.Arrays;
 import java.util.List;
 
+//Заранее прошу прошения за столь "топорное" ДЗ. Времени не было совсем :-(
+//Тут нада все рефакторить и рефакторить и по уму бы переделать на SQLite
+
 public class MainActivity extends AppCompatActivity {
     private RecyclerView list;
     private List<Genre> genres;
@@ -42,12 +45,8 @@ public class MainActivity extends AppCompatActivity {
         if (select == 0) {
             String n = String.valueOf(select);
             Toast.makeText(MainActivity.this, n, Toast.LENGTH_SHORT).show();
-        }
-        if (select == 2) {
-
-        }
-        if (select == 3) {
-
+        } else {
+            Toast.makeText(MainActivity.this, "Времени нехватило ни на что...", Toast.LENGTH_SHORT).show();
         }
     }
 
