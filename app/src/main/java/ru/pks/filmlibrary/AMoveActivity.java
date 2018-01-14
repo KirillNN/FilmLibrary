@@ -1,5 +1,6 @@
 package ru.pks.filmlibrary;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -33,6 +34,13 @@ public class AMoveActivity extends AppCompatActivity {
     }
 }
 class AMoveAdapter extends RecyclerView.Adapter<AMoveViewHolder> {
+    Context context;
+    List<ActionMovie> amoveList;
+
+    public AMoveAdapter(Context context, List<ActionMovie> amoveList) {
+        this.context = context;
+        this.amoveList = amoveList;
+    }
 
     @Override
     public AMoveViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
