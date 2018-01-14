@@ -16,12 +16,12 @@ public class Genre {
             new Genre("Ужасы"),
             new Genre("Фантастика")
     };
+
     private String name;
 
     private Genre(String name) {
         this.name = name;
     }
-
 
     public String getName() {
         return name;
