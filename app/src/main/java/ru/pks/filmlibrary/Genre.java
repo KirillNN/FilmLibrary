@@ -25,6 +25,10 @@ public class Genre {
         this.description = description;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public String getName() {
         return name;
     }
