@@ -70,8 +70,16 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(final GenreViewHolder holder, int position) {
             holder.nameView.setText(genreList.get(position).getName());
-            holder.descView.setText(genreList.get(position).getDescription());
             holder.nameView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    genreNum = holder.getAdapterPosition();
+                    startSelectActivity(genreNum);
+                }
+            });
+//так и не придумал как назначить Клик на всю область, скорее всего через какой нибудь КардВью???
+            holder.descView.setText(genreList.get(position).getDescription());
+            holder.descView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     genreNum = holder.getAdapterPosition();
